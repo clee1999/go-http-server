@@ -29,6 +29,7 @@ func saveData(entry, author string) {
 	if err2 != nil {
 		log.Fatal(err2)
 	}
+	fmt.Printf("add done")
 
 }
 
@@ -51,7 +52,6 @@ func entriesHandler(w http.ResponseWriter, req *http.Request) {
 	if err != nil {
 		log.Panicf("impossible read file: %s", err)
 	}
-	fmt.Printf("%s", data)
 	fmt.Fprintf(w, "%s", data)
 }
 
